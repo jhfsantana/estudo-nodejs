@@ -2,16 +2,25 @@
 <html>
 <head>
 	<title>Lista de Produtos</title>
+	<link href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet'>
 </head>
 <body>
-	<table>
-		<tr>
-			<td>id</td>
-			<td>titulo</td>
-		</tr>
-		<td>1</td>
-			<td>tudo sobre node js</td>
-		</tr>	
-	</table>
+	<div class="container" style="margin-top: 124px">
+		<table class="table table-bordered">
+			<tr>
+				<td>id</td>
+				<td>titulo</td>
+				<td>preco</td>
+				<td>descricao</td>
+			</tr>
+				<% for(var i = 0;i< produtos.length; i++) { %>
+					<td><%=produtos[i].id %></td>
+					<td><%=produtos[i].titulo %></td>
+					<td><%=produtos[i].preco %></td>
+					<td><%=produtos[i].descricao %></td>
+				<% } %>
+			</tr>	
+		</table>
+	</div>
 </body>
 </html>
