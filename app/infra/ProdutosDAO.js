@@ -1,9 +1,13 @@
 function ProdutosDAO(connection) {
-	this.connection = connection;
+	this._connection = connection;
 }
 
 ProdutosDAO.prototype.lista = function(callback){
-	this.connection.query('select * from livros', callback);
+	this._connection.query('select * from livros', callback);
+}
+
+ProdutosDAO.prototype.salvar = function(produto, callback){
+	this._connection.query('insert into livros set ?', produto, callback);
 }
 
 module.exports = function(){
